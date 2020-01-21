@@ -10,7 +10,8 @@ namespace OODWeek1Lab1
     {
         public string BandName { get; set; }
         public DateTime YearFormed { get; set; }
-        
+
+        public string[] Members = new string[] { "Tom Smith", "Brad Duggan", "Micheal Jonrs" };
 
 
     }
