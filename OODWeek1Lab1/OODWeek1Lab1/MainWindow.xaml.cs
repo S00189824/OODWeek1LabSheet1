@@ -41,7 +41,7 @@ namespace OODWeek1Lab1
             List<string> n3 = new List<string> { "Jordan", "peter" };
             List<string> n4 = new List<string> { "Tizano", "Mike" };
             List<string> n5 = new List<string> { "name10", "David" };
-            List<string> n6 = new List<string> { "Satan", "Adolf" };
+            List<string> n6 = new List<string> { "fdod", "frek" };
 
             Indie b1 = new Indie("RaM gfgcow", new DateTime(2019, 09, 10), n1);
             Indie b2 = new Indie("HOP", new DateTime(2018, 09, 10), n2);
@@ -49,11 +49,11 @@ namespace OODWeek1Lab1
             Rock b6 = new Rock("HOP", new DateTime(2018, 09, 10), n2);
             Rock b10 = new Rock("HOP", new DateTime(2018, 09, 10), n2);
 
-            Band b3 = new Band("yAWN", new DateTime(2017, 09, 10), n3);
-            Band b4 = new Band("Chillout", new DateTime(2016, 09, 10), n4);
+            Band b3 = new PoP("yAWN", new DateTime(2017, 09, 10), n3);
+            Band b4 = new PoP("Chillout", new DateTime(2016, 09, 10), n4);
 
             Band b5 = new Band("Hey you", new DateTime(2014, 09, 10), n5);
-            Band b6 = new Band("Blyat", new DateTime(2015, 09, 10),n6);
+            Band b7 = new Band("Blyat", new DateTime(2015, 09, 10),n6);
 
             bands.Add(b1);
             bands.Add(b2);

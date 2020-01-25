@@ -57,4 +57,12 @@ namespace OODWeek1Lab1
 
         }
     }
+
+    public class PoP : Band
+    {
+        public PoP()
+        {
+
+        }
+    }
 }
