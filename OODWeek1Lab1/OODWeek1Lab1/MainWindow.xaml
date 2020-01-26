@@ -9,13 +9,16 @@
     <Grid>
         <Label Content="Bands" HorizontalAlignment="Left" Margin="98,10,0,0" VerticalAlignment="Top" Width="101" Height="42" FontSize="18"/>
         <Label Content="Genre" HorizontalAlignment="Left" Margin="98,72,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120"/>
-        <ListBox x:Name="LbxBands" HorizontalAlignment="Left" Height="257" Margin="98,103,0,0" VerticalAlignment="Top" Width="167"/>
-        <Label Content="Band Information" HorizontalAlignment="Left" Margin="596,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.949,-2.067" Height="36" Width="163" FontSize="18"/>
-        <Label Content="Albums" HorizontalAlignment="Left" Margin="595,164,0,0" VerticalAlignment="Top" Height="34" Width="99" FontSize="18"/>
-        <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="424,183,0,0"/>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="684,381,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListBox HorizontalAlignment="Left" Height="147" Margin="596,213,0,0" VerticalAlignment="Top" Width="163"/>
+        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="LbxBands" HorizontalAlignment="Left" Height="257" Margin="98,103,0,0" VerticalAlignment="Top" Width="167" SelectionChanged="LbxBands_SelectionChanged"/>
+        <Label Content="Band Information" HorizontalAlignment="Left" Margin="507,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.949,-2.067" Height="36" Width="163" FontSize="18"/>
+        <Label Content="Albums" HorizontalAlignment="Left" Margin="507,158,0,0" VerticalAlignment="Top" Height="34" Width="99" FontSize="18"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="595,380,0,0" VerticalAlignment="Top" Width="75"/>
+        <ListBox x:Name="AlbumsListBox" HorizontalAlignment="Left" Height="147" Margin="507,213,0,0" VerticalAlignment="Top" Width="163"/>
+        <Label x:Name="txblockYearFormed" Content="Formed" HorizontalAlignment="Left" Margin="507,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Members" HorizontalAlignment="Left" Margin="507,103,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txblockMembers" HorizontalAlignment="Left" Margin="618,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="55" Width="135"/>
+        <TextBlock x:Name="txblockformed" HorizontalAlignment="Left" Margin="618,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" Width="67"/>
 
     </Grid>
 </Window>
