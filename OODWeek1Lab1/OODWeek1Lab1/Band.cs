@@ -22,12 +22,12 @@ namespace OODWeek1Lab1
         public List<Album> albums { get; set; }
         public List<string> Members { get; set; }
 
-        public Band(string bandname,DateTime year,List<string> members,BandType band,List<Album>albums)
+        public Band(string bandname,DateTime year,List<string> members,BandType band)
         {
             BandName = bandname;
             YearFormed = year;
             Members = members;
-            this.albums = albums;
+            
         }
 
         public Band()
@@ -49,7 +49,7 @@ namespace OODWeek1Lab1
 
     public class Indie : Band
     {
-        public Indie(string bandname, DateTime year, List<string> members,BandType  band, List<Album> albums) : base(bandname, year, members, band, albums)
+        public Indie(string bandname, DateTime year, List<string> members,BandType  band) : base(bandname, year, members, band)
         {
             
         }
@@ -64,7 +64,7 @@ namespace OODWeek1Lab1
     {
         
 
-        public Rock(string bandname, DateTime year, List<string> members, BandType band, List<Album> albums) : base(bandname, year, members, band,albums)
+        public Rock(string bandname, DateTime year, List<string> members, BandType band) : base(bandname, year, members, band)
         {
         }
 
@@ -76,7 +76,7 @@ namespace OODWeek1Lab1
 
     public class PoP : Band
     {
-        public PoP(string bandname, DateTime year, List<string> members, BandType band,List<Album>albums) : base(bandname, year, members, band,albums)
+        public PoP(string bandname, DateTime year, List<string> members, BandType band) : base(bandname, year, members, band)
         {
 
         }

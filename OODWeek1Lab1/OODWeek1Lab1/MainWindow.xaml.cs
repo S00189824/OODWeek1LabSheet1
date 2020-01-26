@@ -23,6 +23,15 @@ namespace OODWeek1Lab1
         List<Band> Allbands = new List<Band>();
         List<Album> albumsToDisplay = new List<Album>();
 
+        Album album1;
+        Album album2;
+        Album album3;
+        Album album4;
+        Album album5;
+        Album album6;
+        int x;
+        
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +40,7 @@ namespace OODWeek1Lab1
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             BandCreate();
-            
+            AlbumCreate();
         }
 
         void BandCreate()
@@ -45,28 +54,21 @@ namespace OODWeek1Lab1
             List<string> n5 = new List<string> { "name", "David" };
             List<string> n6 = new List<string> { "fdod", "frek" };
 
-            List<Album> albumname1 = new List<Album> { new Album("ffffff"),new Album("aaaaa") };
-            List<Album> albumname2 = new List<Album> { new Album("bbbbbb"),new Album("ccccccc") };
-            List<Album> albumname3 = new List<Album> { new Album("ddddd"),new Album("eeeeee") };
-            List<Album> albumname4 = new List<Album> { new Album("ffff"),new Album("ggggggg") };
-            List<Album> albumname5 = new List<Album> { new Album("hhhhhh"),new Album("iiiii") };
-            List<Album> albumname6 = new List<Album> { new Album("jjjjj"),new Album("kkkk") };
-            List<Album> albumname7 = new List<Album> { new Album("lllll"),new Album("mmmm") };
-            List<Album> albumname8 = new List<Album> { new Album("nnnnnn"),new Album("ooooo") };
+            
 
 
 
-            Indie b1 = new Indie("RaM gfgcow", new DateTime(2019, 09, 10), n1, BandType.Indie,albumname1);
-            Indie b2 = new Indie("fgjdk", new DateTime(2018, 09, 10), n2, BandType.Indie,albumname1);
+            Indie b1 = new Indie("RaM gfgcow", new DateTime(2019, 09, 10), n1, BandType.Indie);
+            Indie b2 = new Indie("fgjdk", new DateTime(2018, 09, 10), n2, BandType.Indie);
 
-            Rock b6 = new Rock("fgd", new DateTime(2018, 09, 10), n2, BandType.Rock,albumname3);
-            Rock b8 = new Rock("dgfjh", new DateTime(2018, 09, 10), n1, BandType.Rock,albumname2);
+            Rock b6 = new Rock("fgd", new DateTime(2018, 09, 10), n2, BandType.Rock);
+            Rock b8 = new Rock("dgfjh", new DateTime(2018, 09, 10), n1, BandType.Rock);
 
-            PoP b3 = new PoP("yAWN", new DateTime(2017, 09, 10), n3, BandType.Pop,albumname2);
-            PoP b4 = new PoP("Chillout", new DateTime(2016, 09, 10), n4, BandType.Pop,albumname1);
+            PoP b3 = new PoP("yAWN", new DateTime(2017, 09, 10), n3, BandType.Pop);
+            PoP b4 = new PoP("Chillout", new DateTime(2016, 09, 10), n4, BandType.Pop);
 
-            Rock b5 = new Rock("Hey you", new DateTime(2014, 09, 10), n5, BandType.Rock,albumname2);
-            Rock b7 = new Rock("Blyat", new DateTime(2015, 09, 10), n6, BandType.Rock,albumname3);
+            Rock b5 = new Rock("Hey you", new DateTime(2014, 09, 10), n5, BandType.Rock);
+            Rock b7 = new Rock("Blyat", new DateTime(2015, 09, 10), n6, BandType.Rock);
 
             Allbands.Add(b1);
             Allbands.Add(b2);
@@ -77,7 +79,10 @@ namespace OODWeek1Lab1
             Allbands.Add(b7);
             Allbands.Add(b8);
 
+            
+
             LbxBands.ItemsSource = Allbands;
+            AlbumsListBox.ItemsSource = albumsToDisplay;
 
             Allbands.Sort();
 
@@ -89,21 +94,47 @@ namespace OODWeek1Lab1
 
         }
 
+        void AlbumCreate()
+        {
+            album1 = new Album("dfgjdg", RandonYear(), RandomSales());
+            album2 = new Album("sup", RandonYear(), RandomSales());
+            album3 = new Album("slakfs", RandonYear(), RandomSales());
+            album4 = new Album("heyup", RandonYear(), RandomSales());
+            album5 = new Album("foof", RandonYear(), RandomSales());
+            album6 = new Album("OOP", RandonYear(), RandomSales());
+        }
+
+        Random rng = new Random();
+
+        int RandomSales()
+        {
+            int randomsales = rng.Next(1000, 5001);
+            return randomsales;
+        }
+
+        int RandonYear()
+        {
+            int randomyear = rng.Next(2000, 2020);
+            return randomyear;
+        }
+
         private void LbxBands_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Band currentband = LbxBands.SelectedItem as Band;
+            Album currentAlbum = AlbumsListBox.SelectedItem as Album;
             for (int i = 0; i < Allbands.Count; i++)
             {
                 if(currentband == Allbands[i])
                 {
-                    
+                    x = i;
                 }
+                
             }
 
             txblockformed.Text = currentband.YearFormed.ToShortDateString();
             txblockMembers.Text =  currentband.Members[0].ToString() + " " + currentband.Members[1].ToString();
 
-            
+            DisplaySelected();
         }
 
         void DisplaySelected()
@@ -111,7 +142,31 @@ namespace OODWeek1Lab1
             albumsToDisplay.Clear();
             AlbumsListBox.ItemsSource = null;
 
-            if
+            switch(x)
+            {
+                case 0:
+                    albumsToDisplay.Add(album1);
+                    
+                    break;
+                case 1:
+                    albumsToDisplay.Add(album3);
+                    
+                    break;
+                case 2:
+                    albumsToDisplay.Add(album5);
+                    
+                    break;
+                case 3:
+                    albumsToDisplay.Add(album2);
+                    break;
+                case 4:
+                    albumsToDisplay.Add(album4);
+                    break;
+                case 5:
+                    albumsToDisplay.Add(album6);
+                    break;
+            }
+            AlbumsListBox.ItemsSource = albumsToDisplay;
         }
     }
 }

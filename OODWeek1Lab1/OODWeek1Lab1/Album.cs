@@ -9,17 +9,14 @@ namespace OODWeek1Lab1
     public class Album
     {
         public string AlbumName { get; set; }
-        int ReleasedYear;
+        public int ReleasedYear { get; set; }
         public int Sales { get; set; }
 
-        public Album(string albumname)
+        public Album(string albumname,int release,int sales)
         {
 
-            Random rng = new Random();
-
-            ReleasedYear = rng.Next(2000, 2020);
-            Sales = rng.Next(50, 200);
-            
+            ReleasedYear = release;
+            Sales = sales;
             AlbumName = albumname;
             
         }
