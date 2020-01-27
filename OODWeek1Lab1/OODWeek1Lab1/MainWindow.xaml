@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Bands" HorizontalAlignment="Left" Margin="98,10,0,0" VerticalAlignment="Top" Width="101" Height="42" FontSize="18"/>
         <Label Content="Genre" HorizontalAlignment="Left" Margin="98,72,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ComboBox" HorizontalAlignment="Left" Margin="145,72,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged"/>
         <ListBox x:Name="LbxBands" HorizontalAlignment="Left" Height="257" Margin="98,103,0,0" VerticalAlignment="Top" Width="167" SelectionChanged="LbxBands_SelectionChanged"/>
         <Label Content="Band Information" HorizontalAlignment="Left" Margin="507,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.949,-2.067" Height="36" Width="163" FontSize="18"/>
         <Label Content="Albums" HorizontalAlignment="Left" Margin="507,158,0,0" VerticalAlignment="Top" Height="34" Width="99" FontSize="18"/>

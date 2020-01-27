@@ -165,8 +165,19 @@ namespace OODWeek1Lab1
                 case 5:
                     albumsToDisplay.Add(album6);
                     break;
+                case 6:
+                    albumsToDisplay.Add(album6);
+                    break;
+                case 7:
+                    albumsToDisplay.Add(album6);
+                    break;
             }
             AlbumsListBox.ItemsSource = albumsToDisplay;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }
