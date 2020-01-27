@@ -22,6 +22,7 @@ namespace OODWeek1Lab1
     {
         List<Band> Allbands = new List<Band>();
         List<Album> albumsToDisplay = new List<Album>();
+        List<Band> Genre = new List<Band>();
 
         Album album1;
         Album album2;
@@ -177,7 +178,8 @@ namespace OODWeek1Lab1
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            List<Band> GenreSelection = new List<Band>();
+            Genre = ComboBox.SelectedItem
         }
     }
 }
