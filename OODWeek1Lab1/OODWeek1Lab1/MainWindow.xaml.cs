@@ -21,8 +21,14 @@ namespace OODWeek1Lab1
     public partial class MainWindow : Window
     {
         List<Band> Allbands = new List<Band>();
+        List<Band> filteredBands = new List<Band>();
         List<Album> albumsToDisplay = new List<Album>();
         List<Band> Genre = new List<Band>();
+
+        public bool all = true;
+        public bool POP = true;
+        public bool Rock = true;
+        public bool Indie = true;
 
         Album album1;
         Album album2;
@@ -88,9 +94,7 @@ namespace OODWeek1Lab1
             Allbands.Sort();
 
             //adding Genre Type to combobox
-            ComboBox.Items.Add(BandType.Indie);
-            ComboBox.Items.Add(BandType.Pop);
-            ComboBox.Items.Add(BandType.Rock);
+            ComboBox.ItemsSource = new string[] { "Rock", "Pop", "Indie", "All" };
 
 
         }
@@ -178,8 +182,36 @@ namespace OODWeek1Lab1
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            List<Band> GenreSelection = new List<Band>();
-            Genre = ComboBox.SelectedItem
+            //Figure out what was selected
+            string selected = ComboBox.SelectedItem as string;
+
+            ////Filter based on this
+            //LbxBands.ItemsSource = null;
+            //LbxBands.ItemsSource = Allbands.Where(a => a.GetType().Name.ToLower() == selected.ToLower());
+
+            filteredBands.Clear();
+
+            switch(selected)
+            {
+                case "Rock":
+                    foreach (Band band in Allbands)
+                    {
+                        if(band.GetType().Name.ToLower() == "Rock")
+                        {
+                            filteredBands.Add(band);
+                        }
+                    }
+                    break;
+
+
+                    
+            }
+
+            
+            //if()
+            //{
+
+            //}
         }
     }
 }

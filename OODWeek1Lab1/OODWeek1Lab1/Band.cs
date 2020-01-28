@@ -11,7 +11,8 @@ namespace OODWeek1Lab1
     {
         Pop,
         Rock,
-        Indie
+        Indie,
+        All
     }
 
 
